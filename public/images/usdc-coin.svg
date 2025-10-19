@@ -1,0 +1,51 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="coinGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2563EB;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1D4ED8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1E40AF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="edgeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E40AF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0F172A;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="highlight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:0" />
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background shadow -->
+  <ellipse cx="100" cy="110" rx="80" ry="15" fill="#000000" opacity="0.3"/>
+  
+  <!-- Coin body -->
+  <circle cx="100" cy="100" r="80" fill="url(#coinGradient)" filter="url(#shadow)"/>
+  
+  <!-- Coin edge (3D thickness) -->
+  <path d="M 20 100 A 80 80 0 0 1 180 100" stroke="url(#edgeGradient)" stroke-width="12" fill="none"/>
+  
+  <!-- Dollar sign -->
+  <text x="100" y="115" font-family="Arial, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="white" filter="url(#glow)">$</text>
+  
+  <!-- C-shaped incomplete circle -->
+  <path d="M 40 100 A 60 60 0 0 1 160 100" stroke="white" stroke-width="6" fill="none" opacity="0.9"/>
+  
+  <!-- Top highlight for 3D effect -->
+  <ellipse cx="85" cy="70" rx="25" ry="15" fill="url(#highlight)"/>
+  
+  <!-- Side highlight -->
+  <path d="M 30 100 A 70 70 0 0 1 30 100" stroke="white" stroke-width="3" fill="none" opacity="0.4"/>
+  
+  <!-- Additional shine -->
+  <ellipse cx="75" cy="60" rx="8" ry="4" fill="white" opacity="0.8"/>
+</svg>

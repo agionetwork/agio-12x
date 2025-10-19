@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-slate-200;
+  }
+  
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-blue-50 via-white to-blue-100 text-slate-900 antialiased;
+    min-height: 100vh;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Botões modernos */
+  .btn-primary {
+    @apply bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-4 px-8 rounded-2xl transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105 active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply bg-white/80 backdrop-blur-sm hover:bg-white text-slate-700 font-semibold py-4 px-8 rounded-2xl border border-slate-200 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-semibold py-4 px-8 rounded-2xl transition-all duration-300 transform hover:-translate-y-0.5;
+  }
+  
+  /* Cards modernos */
+  .card {
+    @apply bg-white/70 backdrop-blur-xl rounded-3xl shadow-2xl p-6 border border-white/20 hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2;
+  }
+  
+  .card-glass {
+    @apply bg-white/10 backdrop-blur-xl rounded-3xl shadow-2xl p-8 border border-white/20;
+  }
+  
+  /* Inputs modernos */
+  .input-field {
+    @apply w-full px-4 py-3 bg-white/80 backdrop-blur-sm border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 text-slate-900 placeholder-slate-500 shadow-lg hover:shadow-xl;
+  }
+  
+  .label {
+    @apply block text-xs font-semibold text-slate-700 mb-2 tracking-wide;
+  }
+  
+  .error-message {
+    @apply text-red-500 text-sm mt-2 font-medium;
+  }
+  
+  .success-message {
+    @apply text-emerald-500 text-sm mt-2 font-medium;
+  }
+  
+  .loading-spinner {
+    @apply animate-spin rounded-full h-6 w-6 border-2 border-white border-t-transparent;
+  }
+  
+  /* Gradientes modernos */
+  .gradient-bg {
+    @apply bg-gradient-to-br from-blue-50 via-white to-blue-100;
+  }
+  
+  .hero-gradient {
+    @apply bg-gradient-to-br from-blue-600 to-blue-800;
+  }
+  
+  .card-gradient {
+    @apply bg-gradient-to-br from-white/90 to-blue-50/90;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-accent {
+    @apply bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent;
+  }
+}
+
+@layer utilities {
+  .shadow-glow {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.4), 0 0 60px rgba(59, 130, 246, 0.2);
+  }
+  
+  .shadow-glow-purple {
+    box-shadow: 0 0 30px rgba(147, 51, 234, 0.4), 0 0 60px rgba(147, 51, 234, 0.2);
+  }
+  
+  .shadow-glow-gold {
+    box-shadow: 0 0 30px rgba(251, 191, 36, 0.4), 0 0 60px rgba(251, 191, 36, 0.2);
+  }
+  
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .backdrop-blur-strong {
+    backdrop-filter: blur(20px);
+  }
+}
+
+/* Animações modernas */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(1deg); }
+  66% { transform: translateY(-5px) rotate(-1deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.1);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.6), 0 0 80px rgba(59, 130, 246, 0.3);
+    transform: scale(1.02);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes bounce-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-bounce-gentle {
+  animation: bounce-gentle 2s ease-in-out infinite;
+}
+
+/* Scrollbar customizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full hover:bg-gray-400;
+}
+
+/* Responsividade */
+@media (max-width: 640px) {
+  .card {
+    @apply p-4;
+  }
+  
+  .btn-primary, .btn-secondary, .btn-outline {
+    @apply py-2 px-4 text-sm;
+  }
+}

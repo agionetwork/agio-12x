@@ -106,7 +106,7 @@ export default function PaymentForm({ conversionRate, isLoading = false }: Payme
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              className="card relative overflow-hidden p-2 max-w-md mx-auto"
+              className="card relative overflow-hidden p-2 max-w-md mx-auto border-2 border-blue-500"
             >
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-white/30 to-blue-100/50"></div>

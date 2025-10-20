@@ -5,36 +5,28 @@ import { motion } from 'framer-motion'
 import { Wallet, LogOut, Copy, Check } from 'lucide-react'
 import toast from 'react-hot-toast'
 import WalletModal from './WalletModal'
+import { useWallet } from '@/hooks/useWallet'
+import { WalletInfo } from '@/types/wallet'
 
 export default function WalletConnection() {
-  const [isConnected, setIsConnected] = useState(false)
-  const [walletAddress, setWalletAddress] = useState('')
-  const [walletType, setWalletType] = useState('')
+  const { connected, publicKey, walletType, connectWallet, disconnectWallet } = useWallet()
   const [copied, setCopied] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  const handleConnect = (type: string, address: string) => {
-    setWalletType(type)
-    setWalletAddress(address)
-    setIsConnected(true)
-    setIsModalOpen(false)
-  }
-
-  const handleDisconnect = async () => {
-    try {
-      setIsConnected(false)
-      setWalletAddress('')
-      setWalletType('')
-      toast.success('Carteira desconectada')
-    } catch (error) {
-      console.error('Erro ao desconectar:', error)
-      toast.error('Erro ao desconectar')
+  const handleConnect = async (walletInfo: WalletInfo) => {
+    const result = await connectWallet(walletInfo)
+    if (result) {
+      setIsModalOpen(false)
     }
   }
 
+  const handleDisconnect = async () => {
+    await disconnectWallet()
+  }
+
   const copyAddress = async () => {
-    if (walletAddress) {
-      await navigator.clipboard.writeText(walletAddress)
+    if (publicKey) {
+      await navigator.clipboard.writeText(publicKey)
       setCopied(true)
       toast.success('Endereço copiado!')
       setTimeout(() => setCopied(false), 2000)
@@ -45,7 +37,7 @@ export default function WalletConnection() {
     return `${address.slice(0, 6)}...${address.slice(-4)}`
   }
 
-  if (isConnected && walletAddress) {
+  if (connected && publicKey) {
     return (
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
@@ -59,7 +51,7 @@ export default function WalletConnection() {
         >
           <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
           <span className="text-sm font-medium text-green-700">
-            {formatAddress(walletAddress)}
+            {formatAddress(publicKey)}
           </span>
           <span className="text-xs text-green-600 bg-green-100 px-2 py-1 rounded-full">
             {walletType}

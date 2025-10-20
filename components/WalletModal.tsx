@@ -2,7 +2,7 @@
 
 import { useState, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { X, Wallet, Smartphone, ExternalLink, Copy, Check, Download } from 'lucide-react'
+import { X, Wallet, ExternalLink, Copy, Check, Download } from 'lucide-react'
 import toast from 'react-hot-toast'
 import Image from 'next/image'
 
@@ -235,25 +235,6 @@ export default function WalletModal({ isOpen, onClose, onConnect }: WalletModalP
               })}
             </div>
 
-            {/* Info */}
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="mt-4 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-200"
-            >
-              <div className="flex items-start gap-3">
-                <Smartphone className="w-4 h-4 text-blue-600 mt-0.5" />
-                <div>
-                  <h4 className="font-bold text-blue-800 text-xs mb-1.5">Como conectar sua carteira?</h4>
-                  <div className="space-y-0.5 text-[11px] text-blue-700">
-                    <p>• <strong>Phantom/Solflare/Backpack:</strong> Instale a extensão do navegador</p>
-                    <p>• <strong>Google:</strong> Login automático com carteira integrada</p>
-                    <p>• <strong>Segurança:</strong> Suas chaves privadas nunca saem da sua carteira</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
           </div>
         </motion.div>
       </motion.div>

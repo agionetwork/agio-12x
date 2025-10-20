@@ -118,10 +118,13 @@ export default function PaymentForm({ conversionRate, isLoading = false }: Payme
                     initial={{ scale: 0.8 }}
                     animate={{ scale: 1 }}
                     transition={{ delay: 0.2 }}
-                    className="inline-flex items-center gap-1 bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded-full text-[10px] font-medium mb-1"
+                    className="inline-flex items-center justify-center mb-1"
                   >
-                    <Zap className="w-2.5 h-2.5" />
-                    Compra Rápida e Segura
+                    <img 
+                      src="/images/USDC.png" 
+                      alt="USDC Logo" 
+                      className="w-8 h-8 object-contain"
+                    />
                   </motion.div>
                   
                   <h2 className="text-lg md:text-xl font-black text-gradient mb-2">

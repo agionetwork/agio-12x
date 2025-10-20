@@ -118,18 +118,17 @@ export default function PaymentForm({ conversionRate, isLoading = false }: Payme
                     initial={{ scale: 0.8 }}
                     animate={{ scale: 1 }}
                     transition={{ delay: 0.2 }}
-                    className="inline-flex items-center justify-center mb-1"
+                    className="flex items-center justify-center gap-2 mb-2"
                   >
                     <img 
                       src="/images/USDC.png" 
                       alt="USDC Logo" 
-                      className="w-8 h-8 object-contain"
+                      className="w-6 h-6 object-contain"
                     />
+                    <h2 className="text-lg md:text-xl font-black text-gradient">
+                      USDC em até 12x
+                    </h2>
                   </motion.div>
-                  
-                  <h2 className="text-lg md:text-xl font-black text-gradient mb-2">
-                    USDC em até 12x
-                  </h2>
                   <p className="text-xs text-slate-600 max-w-lg mx-auto whitespace-nowrap">
                     Preencha os dados abaixo e receba seus USDC em sua carteira
                   </p>

@@ -93,7 +93,7 @@ export default function WalletConnection() {
         className="btn-primary flex items-center gap-2"
       >
         <Wallet className="w-5 h-5" />
-        Connect Wallet
+                Conectar Carteira
       </motion.button>
 
       <WalletModal

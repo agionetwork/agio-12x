@@ -18,7 +18,7 @@ const WALLET_OPTIONS = [
   {
     id: 'phantom',
     name: 'Phantom',
-    description: 'A carteira mais popular do Solana',
+    description: '',
     icon: 'phantom',
     // Logo oficial
     logo: '/wallets/phantom.svg',
@@ -30,7 +30,7 @@ const WALLET_OPTIONS = [
   {
     id: 'solflare',
     name: 'Solflare',
-    description: 'Carteira segura e confiável',
+    description: '',
     icon: 'solflare',
     logo: '/wallets/solflare.svg',
     color: 'from-yellow-500 to-orange-500',
@@ -41,7 +41,7 @@ const WALLET_OPTIONS = [
   {
     id: 'backpack',
     name: 'Backpack',
-    description: 'Carteira para traders avançados',
+    description: '',
     icon: 'backpack',
     logo: '/wallets/backpack.svg',
     color: 'from-green-500 to-green-600',
@@ -52,7 +52,7 @@ const WALLET_OPTIONS = [
   {
     id: 'google',
     name: 'Google',
-    description: 'Login com Google (Embedded)',
+    description: '',
     icon: 'google',
     logo: 'https://www.google.com/favicon.ico',
     color: 'from-blue-500 to-blue-600',
@@ -194,7 +194,6 @@ export default function WalletModal({ isOpen, onClose, onConnect }: WalletModalP
                             <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
                           )}
                         </div>
-                        <p className="text-[11px] text-slate-600 mb-1">{wallet.description}</p>
                         
                         {!isInstalled && wallet.type === 'external' && (
                           <div className="flex items-center gap-2">
